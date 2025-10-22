@@ -9,6 +9,9 @@ Input the converted value to destroy them before they reach the bottom.
 
 ---
 
+![image](/images/sample.png)
+
+
 ## How to Play
 ### Core Gameplay
 - **Start Game**: Click "Start Game" button
