@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="GameArea" parent="GtkBox">
+    <property name="orientation">vertical</property>
+    <property name="vexpand">True</property>
+    <property name="spacing">24</property>
+
+    <!-- Game Area for Falling Enemies -->
+    <child>
+      <object class="GtkDrawingArea" id="game_area">
+        <property name="height-request">300</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <style>
+          <class name="card"/>
+        </style>
+      </object>
+    </child>
+
+    <!-- Live Conversion Display Only -->
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <property name="halign">center</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Your Binary Input:</property>
+            <style>
+              <class name="title-4"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="live_hex_label">
+            <property name="label">0x00</property>
+            <style>
+              <class name="title-1"/>
+            </style>
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Binary Bit Grid (Player's "Weapon") -->
+    <child>
+      <object class="GtkBox" id="bit_container">
+        <property name="orientation">horizontal</property>
+        <property name="spacing">4</property>
+        <property name="halign">center</property>
+        <!-- 8 bits will be added dynamically in code -->
+      </object>
+    </child>
+
+    <!-- Game Status -->
+    <child>
+      <object class="GtkLabel" id="status_label">
+        <property name="label" translatable="yes">Click Start Game to begin!</property>
+        <style>
+          <class name="body"/>
+        </style>
+      </object>
+    </child>
+
+    <!-- Start/Restart Game Button -->
+    <child>
+      <object class="GtkButton" id="start_button">
+        <property name="label" translatable="yes">Start Game</property>
+        <property name="halign">center</property>
+        <style>
+          <class name="suggested-action"/>
+          <class name="pill"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

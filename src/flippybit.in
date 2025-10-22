@@ -1,0 +1,22 @@
+#!@PYTHON@
+
+import os
+import sys
+import signal
+
+VERSION = '@VERSION@'
+pkgdatadir = '@pkgdatadir@'
+
+sys.path.insert(1, pkgdatadir)
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+if __name__ == '__main__':
+    import gi
+    from gi.repository import Gio
+
+    # Load UI resources
+    resource = Gio.Resource.load(os.path.join(pkgdatadir, 'flippybit.gresource'))
+    resource._register()
+
+    from flippybit import main
+    sys.exit(main.main(VERSION))
